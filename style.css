@@ -1,0 +1,50 @@
+* {
+margin: 0 !important;
+padding: 0 !important;
+box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}
+/* rooot */
+:root {
+    --pink:rgb(248, 13, 52);
+    --btn: rgb(227,129,165);
+    --btn-gra: linear-gradient(45deg, rgba(227,129,165,1) 42%, rgba(2,177,232,1) 79%, rgba(0,212,255,1) 100%);
+    --white:white;
+}
+/* root color */
+.pink-text{
+    color: var(--pink);
+}
+.my-pagination.active {
+    background-color: var(--pink) !important;
+    color: var(--white) !important;
+    border: none !important;
+}
+.my-pagination {
+    background-color: var(--white) !important;
+    color:var(--pink) !important ;
+    border: none !important;
+}
+li {
+    list-style-type: none;
+}
+.btn-color{
+    background-color: var(--btn);
+    background-color: var(--btn-gra);
+    border: 1px var(--pink) solid;
+    
+}
+.btn-color:hover{
+    background-color:var(--white) ;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.hero {
+    width: 100%;
+    background-color: rgb(139,0,45);
+    background: linear-gradient(45deg, rgba(139,0,45,1) 7%, rgba(227,129,165,1) 42%, rgba(2,177,232,1) 65%, rgba(0,212,255,1) 100%);
+}
