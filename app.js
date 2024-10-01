@@ -130,6 +130,12 @@ function checkout() {
 // Checkout button functionality
 document.getElementById("checkoutButton").addEventListener("click", checkout);
 // name display
+// // In app.js or a script tag at the bottom of your HTML
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("nameDisplay").textContent = `${localStorage.getItem("userName")}`;
+    const userName = localStorage.getItem("userName");
+    if (userName) {
+        document.getElementById("nameDisplay").textContent += `Welcome, ${userName}`;
+    } else {
+        document.getElementById("nameDisplay").textContent = "Welcome, Guest";
+    }
 });
