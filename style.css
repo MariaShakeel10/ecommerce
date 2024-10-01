@@ -1,50 +1,113 @@
 * {
-margin: 0 !important;
-padding: 0 !important;
-box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
 }
+
 body {
     overflow-x: hidden;
 }
-/* rooot */
-:root {
-    --pink:rgb(248, 13, 52);
-    --btn: rgb(227,129,165);
-    --btn-gra: linear-gradient(45deg, rgba(227,129,165,1) 42%, rgba(2,177,232,1) 79%, rgba(0,212,255,1) 100%);
-    --white:white;
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
 }
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 212, 255, 1);
+    /* Color of the track */
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--pink);
+    /* Color of the handle */
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white);
+    /* Color when hovered */
+}
+
+/* rooot */
+.container {
+    margin: 0 auto !important;
+}
+:root {
+    --pink: rgb(248, 13, 52);
+    --btn: rgb(227, 129, 165);
+    --btn-gra: linear-gradient(45deg, rgba(227, 129, 165, 1) 42%, rgba(2, 177, 232, 1) 79%, rgba(0, 212, 255, 1) 100%);
+    --white: white;
+    --blue:rgba(0, 212, 255, 1);
+}
+
 /* root color */
-.pink-text{
+.pink-text,
+h5 {
     color: var(--pink);
 }
+
 .my-pagination.active {
     background-color: var(--pink) !important;
     color: var(--white) !important;
     border: none !important;
 }
+
 .my-pagination {
     background-color: var(--white) !important;
-    color:var(--pink) !important ;
+    color: var(--pink) !important;
     border: none !important;
 }
+.my-pagination:hover {
+    background-color: var(--blue) !important;
+    color: var(--white) !important;
+    border: none !important;
+}
+
+
 li {
     list-style-type: none;
 }
-.btn-color{
+
+.btn-color {
     background-color: var(--btn);
     background-color: var(--btn-gra);
     border: 1px var(--pink) solid;
-    
+
 }
-.btn-color:hover{
-    background-color:var(--white) ;
+
+.btn-color:hover {
+    background-color: var(--white);
+    border: 1px var(--blue) solid;
+
 }
+
 a {
     text-decoration: none;
     color: #000;
 }
+
+/* toggle */
+.toggle-left {
+    position: fixed;
+    top: 1.5em;
+    left: 2em;
+}
+
+.toggle-right {
+    position: fixed;
+    top: 1.5em;
+    right: 2em;
+}
+
+/* hero index */
 .hero {
     width: 100%;
-    background-color: rgb(139,0,45);
-    background: linear-gradient(45deg, rgba(139,0,45,1) 7%, rgba(227,129,165,1) 42%, rgba(2,177,232,1) 65%, rgba(0,212,255,1) 100%);
+    background-color: rgb(139, 0, 45);
+    background: linear-gradient(45deg, rgba(139, 0, 45, 1) 7%, rgba(227, 129, 165, 1) 42%, rgba(2, 177, 232, 1) 65%, rgba(0, 212, 255, 1) 100%);
 }
