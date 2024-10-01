@@ -28,7 +28,7 @@
     <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
       aria-labelledby="staticBackdropLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+        <h5 class="offcanvas-title" id="staticBackdropLabel nameDisplay"></h5>
         <button type="button" class="btn-close ms-auto m-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -40,6 +40,7 @@
               </span></button>
           </form>
         </div>
+        <div class="me-auto m-2"><button class="rounded-pill btn-color p-2 m-2"><a href="login.html">Login</a></button><button class="rounded-pill btn-color p-2 m-2" ><a href="signIn.html">Sign In</a></button></div>
       </div>
     </div>
   </div>
@@ -51,14 +52,15 @@
     
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">Your Items</h5>
       <button type="button" class="btn-close me-auto m-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h5 class="offcanvas-title ms-2 me-auto" id="offcanvasRightLabel">Your Items</h5>
+
   </div>
     <div class="offcanvas-body">
 
       <div id="cart-items"></div>
       <h6 id="cart-total"></h6>
-      <button class="btn btn-color w-100 mt-3">Checkout</button>
+      <button class="btn btn-color ms-2  m-auto mt-3" id="checkoutButton">Checkout</button>
     </div>
   </div>
   <!-- main -->

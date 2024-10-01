@@ -1,4 +1,5 @@
 let allProducts = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Fetch products from the API
 fetch('https://dummyjson.com/products')
@@ -39,8 +40,10 @@ function searchProducts() {
     )
     displayProducts(filteredProducts)
 }
+
 // Search functionality on button click
 document.getElementById("searchButton").addEventListener("click", searchProducts);
+
 // on enter key
 document.getElementById("searchInput").addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
@@ -48,8 +51,6 @@ document.getElementById("searchInput").addEventListener("keypress", (event) => {
     event.preventDefault(); // Prevent form submission (if inside a form)
   }
 });
-// Initialize an empty cart
-let cart = [];
 
 // Function to add product to cart
 function addToCart(productId) {
@@ -62,6 +63,7 @@ function addToCart(productId) {
             cart.push({ ...product, quantity: 1 });
         }
         updateCart();
+        localStorage.setItem('cart', JSON.stringify(cart));
         Swal.fire({
             title: 'Added to Cart!',
             icon: 'success',
@@ -95,9 +97,39 @@ function updateCart() {
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId || item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : false);
     updateCart();
+    localStorage.setItem('cart', JSON.stringify(cart));
     Swal.fire({
         title: 'Removed from Cart!',
         icon: 'info',
         timer: 1000
     });
 }
+
+// Function to checkout
+function checkout() {
+    if (cart.length === 0) {
+        Swal.fire({
+            title: 'Your cart is empty!',
+            icon: 'info',
+            timer: 1000
+        });
+    } else {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        Swal.fire({
+            title: 'Checkout successful!',
+            icon: 'success',
+            timer: 1000
+        });
+        // You can also send the cart data to your server here
+        console.log('Cart data:', cart);
+        cart = [];
+        updateCart();
+    }
+}
+
+// Checkout button functionality
+document.getElementById("checkoutButton").addEventListener("click", checkout);
+// name display
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("nameDisplay").textContent = `${localStorage.getItem("userName")}`;
+});
