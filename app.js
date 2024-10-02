@@ -18,7 +18,7 @@ function displayProducts(products) {
     productsContainer.innerHTML = '';
     products.forEach(product => {
         const card = `
-            <div class="card mb-3 p-3" style="width: 18rem;">
+            <div class="card mb-3 p-3 border-animate" style="width: 18rem;">
                 <img src="${product.images[0]}" class="card-img-top" alt="${product.title}">
                 <div class="card-body text-center">
                     <h5 class="card-title m-1">${product.title}</h5>
@@ -95,7 +95,15 @@ function updateCart() {
 
 // Function to remove product from cart
 function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId || item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : false);
+    const index = cart.findIndex(item => item.id === productId);
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+    }
+
     updateCart();
     localStorage.setItem('cart', JSON.stringify(cart));
     Swal.fire({

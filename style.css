@@ -111,3 +111,13 @@ a {
     background-color: rgb(139, 0, 45);
     background: linear-gradient(45deg, rgba(139, 0, 45, 1) 7%, rgba(227, 129, 165, 1) 42%, rgba(2, 177, 232, 1) 65%, rgba(0, 212, 255, 1) 100%);
 }
+/* animation */
+.border-animate{
+    box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);
+-webkit-box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);
+-moz-box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);}
+.border-animate:hover{
+    box-shadow: -7px 29px 87px 17px rgba(139,0,45,0.5);
+-webkit-box-shadow: -7px 29px 87px 17px rgba(139,0,45,0.5);
+-moz-box-shadow: -7px 29px 87px 17px rgba(139,0,45,0.5);
+}
