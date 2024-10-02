@@ -7,7 +7,7 @@ fetch('https://dummyjson.com/products')
     .then(data => {
         const products = data.products || [];
         allProducts = products;
-        console.log(allProducts);
+        // console.log(allProducts);
         displayProducts(products);
     })
     .catch(error => console.error('Error fetching data:', error));
