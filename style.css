@@ -18,14 +18,12 @@ body {
 ::-webkit-scrollbar-track {
     background: rgba(0, 212, 255, 1);
     /* Color of the track */
-    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--pink);
     /* Color of the handle */
-    border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -82,9 +80,11 @@ li {
 }
 
 .btn-color:hover {
-    background-color: var(--white);
+    background-color: var(--pink);
+    color: var(--white);
     border: 1px var(--blue) solid;
-
+    box-shadow: 0px 13px 47px 8px rgba(2, 178, 232, 0.87);
+    
 }
 
 a {
@@ -113,7 +113,7 @@ a {
 }
 /* animation */
 .border-animate{
-    box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);
+    box-shadow: 0px 13px 47px 8px rgba(2,177,232,0.72);
 -webkit-box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);
 -moz-box-shadow: 0px 13px 47px 10px rgba(2,177,232,0.72);}
 .border-animate:hover{

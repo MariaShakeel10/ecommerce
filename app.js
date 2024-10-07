@@ -1,3 +1,5 @@
+AOS.init();
+
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -18,12 +20,12 @@ function displayProducts(products) {
     productsContainer.innerHTML = '';
     products.forEach(product => {
         const card = `
-            <div class="card mb-3 p-3 border-animate" style="width: 18rem;">
+            <div class="card mb-5 p-3 border-animate" style="width: 18rem;"  data-aos="zoom-out-up" data-aos-duration="8000">
                 <img src="${product.images[0]}" class="card-img-top" alt="${product.title}">
                 <div class="card-body text-center">
                     <h5 class="card-title m-1">${product.title}</h5>
                     <p class="card-text m-1">$${product.price}</p>
-                    <button class="btn btn-color p-2" onclick="addToCart(${product.id})">Add to Cart</button>
+                    <button class="btn btn-color p-2 my-auto " onclick="addToCart(${product.id})">Add to Cart</button>
                 </div>
             </div>
         `;
